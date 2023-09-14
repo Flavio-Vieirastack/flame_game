@@ -27,7 +27,9 @@ class PixelAdventure extends FlameGame {
   }
 
   @override
-  FutureOr<void> onLoad() {
+  FutureOr<void> onLoad() async {
+    //salva em cache
+    await images.loadAllImages();
     cameraComponent = CameraComponent.withFixedResolution(
       width: 640,
       height: 360,
